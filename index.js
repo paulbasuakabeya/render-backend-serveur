@@ -24,6 +24,11 @@ app.use('/api/things', thingRoutes);
 app.use('/api/communications', communicationRoutes);
 app.use('/api/objects', objectRoutes);
 
+// Route GET pour la racine "/"
+app.get('/', (req, res) => {
+  res.send('Bienvenue sur mon API Express !');
+});
+
 // Connexion à MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
